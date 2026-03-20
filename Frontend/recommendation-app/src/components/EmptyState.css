@@ -1,0 +1,116 @@
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  gap: 2rem;
+  animation: fadeIn 0.5s ease 0.2s both;
+}
+
+.empty-illustration {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.empty-circle {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+}
+
+.empty-circle--outer {
+  width: 100px;
+  height: 100px;
+  animation: pulse 3s ease-in-out infinite;
+}
+
+.empty-circle--mid {
+  width: 72px;
+  height: 72px;
+  animation: pulse 3s ease-in-out infinite 0.5s;
+}
+
+.empty-circle--inner {
+  width: 44px;
+  height: 44px;
+  background: var(--paper-warm);
+  border-color: var(--border);
+  animation: pulse 3s ease-in-out infinite 1s;
+}
+
+.empty-icon {
+  position: relative;
+  z-index: 1;
+  color: var(--ink-faint);
+}
+
+.empty-content {
+  text-align: center;
+  max-width: 380px;
+}
+
+.empty-title {
+  font-family: 'Fraunces', serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.6rem;
+}
+
+.empty-desc {
+  font-size: 0.85rem;
+  color: var(--ink-faint);
+  line-height: 1.6;
+}
+
+.empty-desc em {
+  font-style: italic;
+  color: var(--ink-muted);
+  font-family: 'Fraunces', serif;
+}
+
+.empty-flow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.flow-step {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+  background: var(--paper-warm);
+  border: 1px solid var(--border-light);
+  border-radius: 100px;
+  padding: 0.3rem 0.75rem 0.3rem 0.4rem;
+}
+
+.flow-num {
+  font-family: 'Fraunces', serif;
+  font-size: 0.7rem;
+  font-weight: 900;
+  background: var(--paper-dark);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink-muted);
+  flex-shrink: 0;
+}
+
+.flow-arrow {
+  color: var(--border);
+  font-size: 0.75rem;
+}

@@ -1,40 +1,89 @@
-# PurchaseIQ — Python Recommendation Engine
+# Purchase Recommendation API
 
-## Setup & Run
+Flask backend using NumPy + Pandas for purchase-based product recommendations.
+
+## Setup
 
 ```bash
 pip install -r requirements.txt
 python app.py
 ```
 
-Open http://localhost:5000 in your browser.
+Server runs on `http://localhost:5000`.
+
+---
+
+## Endpoints
+
+### `GET /`
+Returns service info and available endpoints.
+
+### `GET /health`
+Health check — returns `{ "status": "ok" }`.
+
+### `GET /products`
+Returns the full product catalogue grouped by category.
+
+### `POST /recommend`
+Returns product recommendations + user insights based on purchase history.
+
+**Request body:**
+```json
+{
+  "name": "Priya Sharma",
+  "purchaseHistory": [
+    { "product": "Running Shoes", "category": "Sports" },
+    { "product": "Yoga Mat",      "category": "Sports" },
+    { "product": "Python Cookbook","category": "Books"  },
+    { "product": "Smart Watch",   "category": "Electronics" }
+  ]
+}
+```
+
+**Response:**
+```json
+{
+  "user": "Priya Sharma",
+  "insights": {
+    "total_purchases": 4,
+    "unique_categories": 3,
+    "top_category": "Sports",
+    "category_breakdown": { "Sports": 2, "Books": 1, "Electronics": 1 }
+  },
+  "recommendations": [
+    {
+      "category": "Sports",
+      "score": 0.5,
+      "purchase_count": 2,
+      "recommended_products": [
+        { "name": "Foam Roller", "price": 29.99, "rating": 4.4 },
+        { "name": "Jump Rope",   "price": 14.99, "rating": 4.3 }
+      ]
+    }
+  ]
+}
+```
+
+### `POST /insights`
+Returns only behavioural insights, without recommendations.
+
+---
+
+## How It Works
+
+1. **DataFrame analysis** — purchase history is loaded into a Pandas DataFrame.
+2. **Affinity scoring** — category frequency is normalised with NumPy to produce a 0–1 affinity score per category.
+3. **Weighted sampling** — products are sampled using `np.random.choice` with product ratings as weights, so higher-rated items appear more often.
+4. **Filtering** — already-purchased items are excluded from recommendations where possible.
+5. **Sorting** — results are sorted by affinity score (highest first).
 
 ## Project Structure
 
 ```
-app.py           ← Flask server + Python CF engine
-static/
-  index.html     ← Frontend UI
-requirements.txt
+recommendation-backend/
+├── app.py           ← Flask routes & validation
+├── recommender.py   ← Pandas/NumPy recommendation logic
+├── products.json    ← Product catalogue (8 categories, 40+ products)
+├── requirements.txt
+└── README.md
 ```
-
-## CSV Format
-
-```
-user_id,ProductA,ProductB,ProductC
-Alice,1,0,1
-Bob,0,1,1
-```
-
-- First column: `user_id`
-- Remaining columns: product names
-- Values: `1` = purchased, `0` = not purchased (also supports ratings 1–5)
-
-## Algorithm
-
-1. `pd.read_csv()` — parse uploaded file into DataFrame
-2. Mean-fill zeros per user (bias correction)
-3. `cosine_similarity()` — compute pairwise user similarity (scikit-learn)
-4. Top-K peer users selected per user (K=10)
-5. Score unseen items by averaging peer ratings
-6. Return top-N ranked recommendations per user (N=8)

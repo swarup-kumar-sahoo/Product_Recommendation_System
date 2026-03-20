@@ -1,5 +1,61 @@
 {
-  "electronics": ["MacBook", "AirPods", "Smart Watch", "Bluetooth Speaker"],
-  "fashion": ["Puma Shoes", "Levi's Jeans", "Jacket", "Cap"],
-  "grocery": ["Rice", "Oil", "Snacks"]
+  "Electronics": [
+    { "name": "Wireless Headphones", "price": 79.99, "rating": 4.5 },
+    { "name": "Smart Watch", "price": 199.99, "rating": 4.7 },
+    { "name": "Mechanical Keyboard", "price": 119.99, "rating": 4.6 },
+    { "name": "USB-C Hub", "price": 39.99, "rating": 4.3 },
+    { "name": "Webcam 4K", "price": 89.99, "rating": 4.4 },
+    { "name": "Laptop Stand", "price": 49.99, "rating": 4.5 }
+  ],
+  "Books": [
+    { "name": "Python Crash Course", "price": 29.99, "rating": 4.8 },
+    { "name": "Design Patterns", "price": 34.99, "rating": 4.6 },
+    { "name": "Atomic Habits", "price": 16.99, "rating": 4.9 },
+    { "name": "The Pragmatic Programmer", "price": 39.99, "rating": 4.7 },
+    { "name": "Deep Work", "price": 14.99, "rating": 4.6 },
+    { "name": "Clean Code", "price": 32.99, "rating": 4.5 }
+  ],
+  "Sports": [
+    { "name": "Running Shoes Pro", "price": 129.99, "rating": 4.6 },
+    { "name": "Yoga Mat Premium", "price": 49.99, "rating": 4.7 },
+    { "name": "Resistance Bands Set", "price": 24.99, "rating": 4.5 },
+    { "name": "Foam Roller", "price": 29.99, "rating": 4.4 },
+    { "name": "Water Bottle 1L", "price": 19.99, "rating": 4.6 },
+    { "name": "Jump Rope", "price": 14.99, "rating": 4.3 }
+  ],
+  "Clothing": [
+    { "name": "Linen Casual Shirt", "price": 44.99, "rating": 4.4 },
+    { "name": "Wool Sweater", "price": 69.99, "rating": 4.5 },
+    { "name": "Running Shorts", "price": 34.99, "rating": 4.6 },
+    { "name": "Canvas Sneakers", "price": 59.99, "rating": 4.3 },
+    { "name": "Denim Jacket", "price": 89.99, "rating": 4.5 }
+  ],
+  "Home": [
+    { "name": "Pour-Over Coffee Maker", "price": 54.99, "rating": 4.7 },
+    { "name": "Air Purifier", "price": 149.99, "rating": 4.6 },
+    { "name": "LED Desk Lamp", "price": 39.99, "rating": 4.5 },
+    { "name": "Ceramic Plant Pot Set", "price": 29.99, "rating": 4.4 },
+    { "name": "Linen Throw Pillow", "price": 24.99, "rating": 4.3 }
+  ],
+  "Beauty": [
+    { "name": "Vitamin C Serum", "price": 24.99, "rating": 4.6 },
+    { "name": "SPF 50 Sunscreen", "price": 18.99, "rating": 4.7 },
+    { "name": "Argan Hair Oil", "price": 22.99, "rating": 4.5 },
+    { "name": "Hyaluronic Moisturiser", "price": 29.99, "rating": 4.6 },
+    { "name": "Tinted Lip Balm", "price": 9.99, "rating": 4.4 }
+  ],
+  "Food": [
+    { "name": "Whey Protein Powder", "price": 49.99, "rating": 4.5 },
+    { "name": "Ceremonial Matcha", "price": 34.99, "rating": 4.7 },
+    { "name": "Extra Virgin Olive Oil", "price": 19.99, "rating": 4.6 },
+    { "name": "70% Dark Chocolate", "price": 8.99, "rating": 4.5 },
+    { "name": "Granola Clusters", "price": 12.99, "rating": 4.4 }
+  ],
+  "Toys": [
+    { "name": "LEGO Architecture Set", "price": 79.99, "rating": 4.8 },
+    { "name": "Catan Board Game", "price": 44.99, "rating": 4.7 },
+    { "name": "1000pc Puzzle", "price": 19.99, "rating": 4.5 },
+    { "name": "RC Off-Road Car", "price": 59.99, "rating": 4.4 },
+    { "name": "Watercolour Art Kit", "price": 34.99, "rating": 4.6 }
+  ]
 }
