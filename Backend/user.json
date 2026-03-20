@@ -1,0 +1,11 @@
+{
+  "name": "asrr",
+  "age": 22,
+  "purchaseHistory": [
+    {"product": "iPhone 13", "category": "electronics"},
+    {"product": "Samsung TV", "category": "electronics"},
+    {"product": "Nike Shoes", "category": "fashion"},
+    {"product": "Adidas T-shirt", "category": "fashion"},
+    {"product": "Laptop", "category": "electronics"}
+  ]
+}

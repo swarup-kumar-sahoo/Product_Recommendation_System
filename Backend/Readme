@@ -1,0 +1,40 @@
+# PurchaseIQ — Python Recommendation Engine
+
+## Setup & Run
+
+```bash
+pip install -r requirements.txt
+python app.py
+```
+
+Open http://localhost:5000 in your browser.
+
+## Project Structure
+
+```
+app.py           ← Flask server + Python CF engine
+static/
+  index.html     ← Frontend UI
+requirements.txt
+```
+
+## CSV Format
+
+```
+user_id,ProductA,ProductB,ProductC
+Alice,1,0,1
+Bob,0,1,1
+```
+
+- First column: `user_id`
+- Remaining columns: product names
+- Values: `1` = purchased, `0` = not purchased (also supports ratings 1–5)
+
+## Algorithm
+
+1. `pd.read_csv()` — parse uploaded file into DataFrame
+2. Mean-fill zeros per user (bias correction)
+3. `cosine_similarity()` — compute pairwise user similarity (scikit-learn)
+4. Top-K peer users selected per user (K=10)
+5. Score unseen items by averaging peer ratings
+6. Return top-N ranked recommendations per user (N=8)

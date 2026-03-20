@@ -1,0 +1,5 @@
+{
+  "electronics": ["MacBook", "AirPods", "Smart Watch", "Bluetooth Speaker"],
+  "fashion": ["Puma Shoes", "Levi's Jeans", "Jacket", "Cap"],
+  "grocery": ["Rice", "Oil", "Snacks"]
+}
